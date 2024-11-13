@@ -15,7 +15,7 @@ class ProfileSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(10)->create();
+        Profile::factory(10)->create();
 
     }
 }

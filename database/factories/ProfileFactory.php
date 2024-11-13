@@ -17,7 +17,7 @@ class ProfileFactory extends Factory
         return [
             'bio' => $this->faker->text(),
             'school' => $this->faker->company(),
-            'user_id' => User::factory(),
+            'user_id' => $this->faker->randomElement([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
         ];
     }
 }

@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $course->course_name }}</title>
+    <title>Users in {{ $course->name }}</title>
 </head>
 <body>
-    <h1>{{ $course->course_name }}</h1>
-    <p>{{ $course->description }}</p>
-    <h2>Users enrolled:</h2>
+    <h1>Users Enrolled in {{ $course->name }}</h1>
     <ul>
         @forelse ($course->users as $user)
-            <li>{{ $user->name }}</li>
+            <li>{{ $user->name }} - {{ $user->email }}</li>
         @empty
             <p>No users enrolled in this course.</p>
         @endforelse

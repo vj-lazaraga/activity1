@@ -11,6 +11,9 @@ class Profile extends Model
     protected $fillable = [
         'bio',
         'school',
+    ];
+
+    protected $guarded = [
         'user_id'
     ];
 

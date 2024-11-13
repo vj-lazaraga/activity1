@@ -15,9 +15,10 @@ class UserController extends Controller
     }
 
     // Show all courses for a user
-    public function showCourses($id)
+    public function showUserCourses($id)
     {
         $user = User::with('courses')->findOrFail($id); // Fetch the user and their courses
-        return view('courses', ['user' => $user]); // Pass the user with their courses to the view
+        $user->courses()->sync([1, 2, 3, 4, 5]);
+        return view('users', ['user' => $user]); // Pass the user with their courses to the view
     }
 }
